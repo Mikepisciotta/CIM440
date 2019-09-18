@@ -10,7 +10,9 @@ var pButton, dButton, sButton
 
 var currentImage = 0;
 
+//var currentAnimal; this doesnt work because puppy has no value at this point of the program.
 
+var currentAnimal;
 
 
 function preload(){
@@ -43,6 +45,9 @@ sButton = createButton("Sloth");
 sButton.mousePressed(function(){
   currentImage = 2;
 });
+
+currentAnimal = puppy;
+
 }
 
 
@@ -56,15 +61,16 @@ function draw() {
 
 if (currentImage == 0){
   //show puppy
-  image(puppy, 0,0, puppy.width/4, puppy.height/4);
-
+currentAnimal = puppy;
 }else if(currentImage == 1){
   //show dino
-  image(dinosaur, 0,0, dinosaur.width/4, dinosaur.height/4);
+  currentAnimal = dinosaur;
 
 }else if(currentImage == 2){
   //show sloth
-  image(sloth, 0,0, sloth.width/4, sloth.height/4);
+  currentAnimal = sloth;
 }
+
+image(currentAnimal, 0, 0, currentAnimal.width/4, currentAnimal.height/4);
 
 }
