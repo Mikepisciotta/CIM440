@@ -13,9 +13,9 @@ var changeBackground = "white";
 
 
 function setup() {
-
-
 createCanvas(800,500);
+
+
 pointx=width/2 // these two set the starting point in the center of the canvas
 pointy=height/2 //Set all x and y points to the value of width/2 and height/2
 background(255); //
@@ -92,6 +92,14 @@ function keyPressed(){
   if(key == "g"){
     changeBackground = "green";
  }
+
+ if(key == "r"){
+   changeBackground = "red";
+ }
+
+ if(key == "b"){
+   changeBackground = "blue";
+}
 
 
  if(key == "w"){
