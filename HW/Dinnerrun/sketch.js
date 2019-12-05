@@ -1,12 +1,3 @@
-var predator= {
-x: 300,
-y: 200,
-xspeed: 10,
-yspeed: -8
-}
-
-//figure out how to add score and how to make touching predator and fake food reset game
-
 
 var s;
 var scl = 20;
@@ -18,10 +9,11 @@ var food;
 
 
 function setup() {
-createCanvas(700, 700);
+createCanvas(1440, 700);
 s = new Snake
 frameRate(12);
 pickLocation();
+
 
 }
 
@@ -67,30 +59,22 @@ fill("firebrick");
 rect(fakefood3.x, fakefood3.y, scl, scl);
 
 
-strokeWeight(4);
-fill("blue");
-ellipse(predator.x, predator.y, 30, 30);
-
-if(predator.x > width || predator.x < 0){
-  predator.xspeed = predator.xspeed * -1;
-}
-if(predator.y > height || predator.y < 0){
-  predator.yspeed = predator.yspeed * -1;
-}
-
-predator.x = predator.x + predator.xspeed;
-predator.y = predator.y + predator.yspeed;
-
 
 fill("red");
 textSize(15);
 textFont('Georgia');
-text("DINNER RUN", 290, 15);
+text("DINNER RUN", 10, 15);
 
 fill("red");
 textSize(10);
 textFont('Georgia');
-text("Find the real food, avoid becoming it!!", 250, 25);
+text("Find the real food!!", 10, 25);
+
+
+
+
+
+
 
 }//end draw
 
@@ -138,8 +122,9 @@ this.death = function(){
     this.total = 0;
     this.tail = [];
     }
-  }
-}
+  }//end for
+
+}//end death
 
 
   this.update = function (){
@@ -165,6 +150,12 @@ this.death = function(){
 }
 rect(this.x, this.y, scl, scl);
   }
+
+
+
+
+
+
 
 
 }//end snake
